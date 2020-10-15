@@ -5,6 +5,7 @@ public class Metrik {
 		int windowSizeY = 500;
 		//so ein scheiss
 		//aaaaaa vcc
+//behubfvhef
 		MainWindow mw = new MainWindow(windowSizeX, windowSizeY);
 		mw.openWindow();
 	}
