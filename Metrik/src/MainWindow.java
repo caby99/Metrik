@@ -5,7 +5,7 @@ public class MainWindow extends Frame implements WindowListener{
 
 		private int _x;
 		private int _y;
-		
+		private int _color;
 		public MainWindow(int windowSizeX, int windowSizeY) {
 			this._x = windowSizeX;
 			this._y = windowSizeY;
@@ -14,8 +14,9 @@ public class MainWindow extends Frame implements WindowListener{
 			setSize(_x, _y);
 			
 			addWindowListener(this);
-			add(new DrawObject(_x, _y));
+			add(new DrawObject(_x, _y, _color));
 			setMenuBar(new MainMenuBar());
+			
 		}
 		
 		public int getX() {
