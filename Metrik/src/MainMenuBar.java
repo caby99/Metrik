@@ -1,22 +1,73 @@
-import java.awt.*;
-
-public class MainMenuBar extends MenuBar {
-	
-	private Menu _menu;
-	private DrawObject obj;
-
-	public MainMenuBar() {
-		_menu = new Menu("Hintergrundfarbe-Programm");
-		_menu.add(new MenuItem("Farbe: rot"));
-		_menu.add(new MenuItem("Farbe: gelb"));
-		_menu.add(new MenuItem("Farbe: grün"));
-		
-		obj = new DrawObject(500, 500, 1);
-		
-		add(_menu);
-		
-
-
-
-	}
-}
+//import java.awt.BorderLayout;
+//
+//import javax.swing.*;
+//
+//public class MainMenuBar extends JFrame{
+//	
+//	private int _color;
+//	private JMenuBar menuBar;
+//	private JMenu fileMenu;
+//	private JMenuItem rot;
+//	private JMenuItem gruen;
+//	private JMenuItem blau;
+//	private JMenuItem closeItem;
+//
+//	public MainMenuBar(int windowSizeX, int windowSizeY, int color) {
+//		this._color = color;
+//		
+//		menuBar = new JMenuBar();
+//		 
+//        fileMenu = new JMenu("Hintergrund");
+// 
+//        rot = new JMenuItem("Rot");
+//        gruen = new JMenuItem("Gruen");
+//        blau = new JMenuItem("Blau");
+//        closeItem = new JMenuItem("Schließen");
+//
+// 
+//        fileMenu.add(rot);
+//        fileMenu.add(gruen);
+//        fileMenu.add(blau);
+//        fileMenu.add(closeItem);
+//        
+//        menuBar.add(fileMenu);
+// 
+//        this.add(menuBar, BorderLayout.NORTH);
+//        
+//        rot.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent e) {
+//                _color = 1;
+//                setVisible(false);
+//                dispose();
+//                MainWindow mw = new MainWindow(windowSizeX, windowSizeY, _color);
+//        		mw.openWindow();
+//            }
+//        });
+//        
+//        gruen.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent e) {
+//                _color = 2;
+//                setVisible(false);
+//                dispose();
+//                MainWindow mw = new MainWindow(windowSizeX, windowSizeY, _color);
+//        		mw.openWindow();
+//            }
+//        });
+//        
+//        blau.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent e) {
+//                _color = 3;
+//                setVisible(false);
+//                dispose();
+//                MainWindow mw = new MainWindow(windowSizeX, windowSizeY, _color);
+//        		mw.openWindow();
+//            }
+//        });
+//        
+//        closeItem.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent e) {
+//                System.exit(0);
+//            }
+//        });
+//	}
+//}

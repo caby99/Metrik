@@ -5,14 +5,10 @@ import java.awt.geom.*;
 public class DrawObject extends Canvas implements MouseListener{
 	
 
-
-	
 	private Float _x, _y;
-	//private Canvas canvas;
 	private int _counter;
 	private int _sizeX = 0;
 	private int _sizeY = 0;
-	private int _color =0;
 	
 	public DrawObject(int sizeX, int sizeY, int color) {
 		this._sizeX = sizeX;
@@ -21,25 +17,20 @@ public class DrawObject extends Canvas implements MouseListener{
 		_x = _y = (float) 0;
 		_counter = 0;
 		
-		setSize(_sizeX, _sizeY);
-		setBackground(Color.green);	
-		
+		setSize(_sizeX, _sizeY);		
 
-		if (color == 1) {
-			setBackground(Color.RED);}
-		else 
+		if (color == 1)
+			setBackground(Color.red);
+		else if (color == 2)
+			setBackground(Color.green);
+		else if (color == 3)
 			setBackground(Color.blue);
-		
+		else if (color < 1 || color > 3)
+			setBackground(Color.pink);
+
 
 		
 		addMouseListener(this);
-	}
-	
-	public void hintergrund (int color) {
-
-		if (color == 1) {
-		setBackground(Color.RED);}
-		else setBackground(Color.blue);
 	}
 
 	@Override
