@@ -12,7 +12,10 @@ public class MainWindow extends JFrame{
 		private JMenuItem gruen;
 		private JMenuItem blau;
 		private JMenuItem closeItem;
-
+		private Label statusLabel;
+		private Panel controlPanel;
+		private static String objektGroeﬂe;
+		private String diameter;
 		
 		public MainWindow(int windowSizeX, int windowSizeY, int color) {
 			this._x = windowSizeX;
@@ -38,10 +41,44 @@ public class MainWindow extends JFrame{
 	        fileMenu.add(closeItem);
 
 	        menuBar.add(fileMenu);
-	 
+	        
+	        //**********************************************
+	        
+	        setLayout(new FlowLayout());
+    		
+    		statusLabel = new Label();
+			statusLabel.setAlignment(Label.CENTER);
+			statusLabel.setSize(600,100);
+			 
+			controlPanel = new Panel();
+			controlPanel.setLayout(new FlowLayout());
+			
+    		add(controlPanel);
+    		
+    		Label frage = new Label("Wie Groﬂ soll der Kreis werden?: ", Label.CENTER);
+			final TextField antwortText = new TextField(6);
+			Button antwortButton = new Button("senden");
+			
+			antwortButton.addActionListener(new java.awt.event.ActionListener() {
+
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					String data = antwortText.getText();
+					statusLabel.setText(data);
+					System.out.println(statusLabel.getText());
+					objektGroeﬂe = statusLabel.getText();
+					System.out.println("String ausgegeben: " +objektGroeﬂe);
+				 }
+			});
+			
+    		controlPanel.add(frage);
+			 	controlPanel.add(antwortText);
+			 	controlPanel.add(antwortButton);
+			 	 
+	        
+	        //**********************************************
 	        this.add(menuBar, BorderLayout.NORTH);
 	        
-	        add(new DrawObject(_x, _y, _color));
+	        add(new DrawObject(_x-100, _y-100, _color));
 	        
 	        rot.addActionListener(new java.awt.event.ActionListener() {
 	            public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -78,7 +115,7 @@ public class MainWindow extends JFrame{
 	                System.exit(0);
 	            }
 	        });
-			
+	        
 		}
 		
 		public int getX() {
@@ -89,6 +126,13 @@ public class MainWindow extends JFrame{
 			return _y;
 		}
 		
+		public static String getObjektGroeﬂe() {
+			if (objektGroeﬂe == null) {
+				return objektGroeﬂe = "50";
+			}else {
+				return objektGroeﬂe;
+			}	
+		}
 		
 		public void openWindow() {
 			setVisible(true);
